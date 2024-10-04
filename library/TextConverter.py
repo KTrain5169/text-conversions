@@ -263,7 +263,7 @@ class TextConverter:
             'pancakes': '🥞', 'butter': '🧈', 'cooking': '🍳', 'chicken': '🍗',
             'meat_on_bone': '🍖', 'salad': '🥗', 'tomato': '🍅',
             'avocado': '🥑', 'broccoli': '🥦', 'mushroom': '🍄', 'carrot': '🥕',
-            'potato': '🥔',
+            'potato': '🥔', 'nerd': '🤓', '?': '❓', '!': '❗'
         }
 
         words = text.split()
