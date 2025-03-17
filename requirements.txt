@@ -6,4 +6,4 @@ pillow==11.0.0
 python-barcode==0.15.1
 audioread==3.0.1
 soundfile==0.12.1
-numpy==2.2.0
+numpy==2.2.4
