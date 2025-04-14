@@ -1,5 +1,5 @@
 pyperclip==1.9.0
-art==6.4
+art==6.5
 qrcode==8.0
 argparse==1.4.0
 pillow==11.0.0
