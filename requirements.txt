@@ -2,7 +2,7 @@ pyperclip==1.9.0
 art==6.4
 qrcode==8.0
 argparse==1.4.0
-pillow==11.0.0
+pillow==11.2.1
 python-barcode==0.15.1
 audioread==3.0.1
 soundfile==0.12.1
