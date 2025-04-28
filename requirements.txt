@@ -5,5 +5,5 @@ argparse==1.4.0
 pillow==11.0.0
 python-barcode==0.15.1
 audioread==3.0.1
-soundfile==0.12.1
+soundfile==0.13.1
 numpy==2.2.0
