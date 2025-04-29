@@ -1,0 +1,14 @@
+[flake8]
+max-line-length = 120
+extend-ignore = E402
+per-file-ignores = 
+    library/TextConverter.py: W605
+exclude = 
+    .git,
+    __pycache__,
+    venv,
+    build,
+    dist,
+    *.spec,
+    .github,
+    .vscode

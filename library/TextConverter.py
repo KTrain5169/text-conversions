@@ -14,7 +14,7 @@ import qrcode
 import barcode
 from barcode.writer import ImageWriter
 import math
-import numpy as np  # Add this import at the top of the file
+import numpy as np
 
 
 class TextConverter:
@@ -123,7 +123,8 @@ class TextConverter:
             if char.isalpha():
                 shift_amount = 65 if char.isupper() else 97
                 encrypted.append(
-                    chr((ord(char) - shift_amount + shift) % 26 + shift_amount))
+                    chr((ord(char
+                             ) - shift_amount + shift) % 26 + shift_amount))
             else:
                 encrypted.append(char)
         return ''.join(encrypted)
@@ -135,8 +136,11 @@ class TextConverter:
         return text2art(text, font='block')
 
     def zalgo_text(self, text):
-        zalgo_chars = ['̍', '̎', '̄', '̅', '̿', '̑', '̆', '̐', '͒', '͗', '͑', '̇', '̈', '̊', '͂', '̓', '̈', '͊', '͋', '͌', '̃', '̂', '̌', '͐',
-                       '̀', '́', '̋', '̏', '̒', '̓', '̔', '̽', '̉', 'ͣ', 'ͤ', 'ͥ', 'ͦ', 'ͧ', 'ͨ', 'ͩ', 'ͪ', 'ͫ', 'ͬ', 'ͭ', 'ͮ', 'ͯ', '̾', '͛', '͆', '̚']
+        zalgo_chars = ['̍', '̎', '̄', '̅', '̿', '̑', '̆', '̐', '͒', '͗', '͑',
+                       '̇', '̈', '̊', '͂', '̓', '̈', '͊', '͋', '͌', '̃', '̂',
+                       '̌', '͐', '̀', '́', '̋', '̏', '̒', '̓', '̔', '̽', '̉',
+                       'ͣ', 'ͤ', 'ͥ', 'ͦ', 'ͧ', 'ͨ', 'ͩ', 'ͪ', 'ͫ', 'ͬ', 'ͭ',
+                       'ͮ', 'ͯ', '̾', '͛', '͆', '̚']
         return ''.join(random.choice(zalgo_chars) + char for char in text)
 
     def morse_code(self, text):
@@ -154,7 +158,8 @@ class TextConverter:
             '-': '-....-', '(': '-.--.', ')': '-.--.-',
             ' ': '/'
         }
-        return ' '.join(MORSE_CODE_DICT.get(char.upper(), char) for char in text)
+        return ' '.join(MORSE_CODE_DICT.get(char.upper(
+               ), char) for char in text)
 
     def binary_text(self, text):
         return ' '.join(format(ord(char), '08b') for char in text)
@@ -187,7 +192,8 @@ class TextConverter:
 
         if code_type == 'qr':
             qr = qrcode.QRCode(
-                version=1, error_correction=qrcode.constants.ERROR_CORRECT_L, box_size=10, border=4)
+                version=1, error_correction=qrcode.constants.ERROR_CORRECT_L,
+                box_size=10, border=4)
             qr.add_data(text)
             qr.make(fit=True)
             img = qr.make_image(fill='black', back_color='white')
@@ -204,28 +210,38 @@ class TextConverter:
             'hello': '👋', 'world': '🌍', 'love': '❤️', 'happy': '😊', 'sad': '😢',
             'laugh': '😂', 'smile': '😃', 'angry': '😠', 'cool': '😎', 'sun': '☀️',
             'moon': '🌙', 'star': '⭐', 'food': '🍔', 'drink': '🍹', 'music': '🎵',
-            'book': '📚', 'computer': '💻', 'phone': '📱', 'car': '🚗', 'house': '🏠',
+            'book': '📚', 'computer': '💻', 'phone': '📱', 'car': '🚗',
+            'house': '🏠',
             'tree': '🌳', 'flower': '🌸', 'dog': '🐶', 'cat': '🐱', 'bird': '🐦',
-            'fish': '🐠', 'heart': '❤️', 'fire': '🔥', 'water': '💧', 'earth': '🌎',
+            'fish': '🐠', 'heart': '❤️', 'fire': '🔥', 'water': '💧',
+            'earth': '🌎',
             'air': '💨', 'time': '⏰', 'money': '💰', 'work': '💼', 'sleep': '😴',
-            'party': '🎉', 'gift': '🎁', 'camera': '📷', 'movie': '🎬', 'music': '🎵',
+            'party': '🎉', 'gift': '🎁', 'camera': '📷', 'movie': '🎬',
+            'music': '🎵',
             'sport': '⚽', 'win': '🏆', 'yes': '👍', 'no': '👎', 'ok': '👌',
-            'hello': '👋', 'bye': '👋', 'please': '🙏', 'thanks': '🙏', 'sorry': '😔',
+            'hello': '👋', 'bye': '👋', 'please': '🙏', 'thanks': '🙏',
+            'sorry': '😔',
             'wow': '😮', 'omg': '😱', 'lol': '😂', 'idea': '💡', 'question': '❓',
-            'answer': '✅', 'warning': '⚠️', 'stop': '🛑', 'go': '🚦', 'fast': '⚡',
+            'answer': '✅', 'warning': '⚠️', 'stop': '🛑', 'go': '🚦',
+            'fast': '⚡',
             'slow': '🐌', 'up': '⬆️', 'down': '⬇️', 'left': '⬅️', 'right': '➡️',
             'back': '🔙', 'soon': '🔜', 'new': '🆕', 'free': '🆓', 'hot': '🔥',
             'cold': '❄️', 'big': '🐘', 'small': '🐜', 'loud': '📢', 'quiet': '🤫',
             'good': '👍', 'bad': '👎', 'sick': '🤒', 'healthy': '💪', 'smart': '🧠',
             'crazy': '🤪', 'king': '👑', 'queen': '👸', 'baby': '👶', 'ghost': '👻',
-            'alien': '👽', 'robot': '🤖', 'rainbow': '🌈', 'unicorn': '🦄', 'pizza': '🍕',
+            'alien': '👽', 'robot': '🤖', 'rainbow': '🌈', 'unicorn': '🦄',
+            'pizza': '🍕',
             'beer': '🍺', 'wine': '🍷', 'coffee': '☕', 'tea': '🍵', 'cake': '🎂',
-            'balloon': '🎈', 'rocket': '🚀', 'airplane': '✈️', 'train': '🚂', 'boat': '⛵',
-            'beach': '🏖️', 'mountain': '⛰️', 'camping': '⛺', 'fire': '🔥', 'snow': '❄️',
-            'rain': '🌧️', 'wind': '💨', 'cloud': '☁️', 'thunder': '⚡', 'rainbow': '🌈'
+            'balloon': '🎈', 'rocket': '🚀', 'airplane': '✈️', 'train': '🚂',
+            'boat': '⛵',
+            'beach': '🏖️', 'mountain': '⛰️', 'camping': '⛺', 'fire': '🔥',
+            'snow': '❄️',
+            'rain': '🌧️', 'wind': '💨', 'cloud': '☁️', 'thunder': '⚡',
+            'rainbow': '🌈'
         }
         words = text.split()
-        return ' '.join(emoticon_dict.get(word.lower(), word) for word in words)
+        return ' '.join(emoticon_dict.get(word.lower(
+               ), word) for word in words)
 
     def nerd_mode(self, text):
         word_count = len(text.split())
@@ -268,7 +284,7 @@ class TextConverter:
             'P': '.--.', 'Q': '--.-', 'R': '.-.', 'S': '...', 'T': '-',
             'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-', 'Y': '-.--',
             'Z': '--..',
-            
+
             '0': '-----', '1': '.----', '2': '..---', '3': '...--',
             '4': '....-', '5': '.....', '6': '-....', '7': '--...',
             '8': '---..', '9': '----.',
@@ -281,7 +297,8 @@ class TextConverter:
 
         def generate_sine_wave(freq, duration, volume=1.0, sample_rate=44100):
             num_samples = int(sample_rate * duration)
-            samples = [int(volume * 32767 * math.sin(2 * math.pi * freq * t / sample_rate))
+            samples = [int(volume * 32767 * math.sin(
+                2 * math.pi * freq * t / sample_rate))
                        for t in range(num_samples)]
             return samples
 
@@ -306,7 +323,8 @@ class TextConverter:
                 morse_audio.extend(medium_gap)
 
         # Create a temporary WAV file
-        with tempfile.NamedTemporaryFile(suffix='.wav', delete=False) as temp_wav:
+        with tempfile.NamedTemporaryFile(suffix='.wav',
+                                         delete=False) as temp_wav:
             temp_wav_path = temp_wav.name
             with wave.open(temp_wav_path, 'w') as wav_file:
                 wav_file.setnchannels(1)
