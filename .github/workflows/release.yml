@@ -112,13 +112,13 @@ jobs:
           }
 
       - name: Upload debug builds
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: translator_${{ github.ref_name }}_${{ matrix.os }}_build
           path: build/*
 
       - name: Upload distributable builds
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: translator_${{ github.ref_name }}_${{ matrix.os }}_dist
           path: output/*

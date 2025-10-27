@@ -57,13 +57,13 @@ jobs:
                 cat LICENSE >> dist/licenses/translator-code-license.txt
 
             - name: Upload Builds
-              uses: actions/upload-artifact@v4
+              uses: actions/upload-artifact@v5
               with:
                 name: ${{ matrix.os }} build at ${{ github.sha }}
                 path: build/
 
             - name: Upload Dists
-              uses: actions/upload-artifact@v4
+              uses: actions/upload-artifact@v5
               with:
                 name: ${{ matrix.os }} dist at ${{ github.sha }}
                 path: dist/
